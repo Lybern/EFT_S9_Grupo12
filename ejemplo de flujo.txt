@@ -1,0 +1,80 @@
+// Usuario precargado como admin, único en hacer post usuarios
+	http://localhost:8081/auth/login  (aquí genera token)
+{
+"correo": "admin@duoc.cl",
+"contrasenia": "Admin123"
+}
+
+
+
+//creación profesor y alumno, se debe usar token de "ADMIN"
+	http://localhost:8081/api/usuarios
+{
+    "nombre": "Juan",
+    "correo": "Juan@duoc.cl",
+    "contrasenia": "Juan123",
+    "rol": "PROFESOR"
+}
+
+Y LO MISMO PARA ALUMNO
+{
+"nombre": "dani",
+"correo": "dani@test.cl",
+"contrasenia": "2018",
+"rol": "ALUMNO"
+}
+
+
+
+//autenticación de usuario "PROFESOR" y "ALUMNO"
+	http://localhost:8081/auth/login (guardar token)
+{
+    "correo": "Juan@duoc.cl",
+    "contrasenia": "Juan123"
+}
+
+ Y LO MISMO PARA ALUMNO
+{
+    "correo": "dani@test.cl",
+    "contrasenia": "2018"
+}
+
+
+
+//creación de curso 1  (TOKEN DE PROFE)
+	http://localhost:8082/api/cursos
+{
+"nombre": "Microservicios",
+"descripcion": "Introduccion a sistema de microservicios",
+"profesorId": 2
+}
+
+
+//curso2 para ejecutar CRUD COMPLETO   ""CREATE""
+	http://localhost:8082/api/cursos
+{
+"nombre": "Como preparar completos",
+"descripcion": "Completos italianos",
+"profesorId": 2
+}
+
+// GET   http://localhost:8082/api/cursos ""READ""
+
+// PUT  http://localhost:8082/api/cursos/2 ""UPDATE"" 
+{
+"nombre": "Como preparar completos WENOS",
+"descripcion": "Desde completos italianos a completos mojados",
+"profesorId": 2
+}
+
+// DELETE http://localhost:8082/api/cursos/2 ""DELETE"
+
+
+
+
+token admin:
+
+
+token profe: 
+
+token alumno: 
